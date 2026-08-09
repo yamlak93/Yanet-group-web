@@ -32,7 +32,7 @@ const businesses = [
   },
 ];
 
-const HomeBussiness = () => {
+const HomeBusiness = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -141,4 +141,4 @@ const HomeBussiness = () => {
   );
 };
 
-export default HomeBussiness;
+export default HomeBusiness;
