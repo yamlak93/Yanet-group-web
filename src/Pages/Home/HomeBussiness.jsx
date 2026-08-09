@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import DisplayCard from "../../Components/DisplayCard";
 
 import coffeeImg from "../../assets/coffee1.jpg";
-import chemicalImg from "../../assets/Chemicaltube1.jpg";
+import chemicalImg from "../../assets/chemicaltube1.jpg";
 import logisticsImg from "../../assets/chemicalFactory1.jpg";
 
 const businesses = [
