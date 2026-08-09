@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import aboutHeroImage from "../../assets/coffee1.jpg";
 const AboutHero = () => {
   const [loaded, setLoaded] = useState(false);
 
@@ -13,7 +13,7 @@ const AboutHero = () => {
       <div
         className="about-bg"
         style={{
-          backgroundImage: `url('/src/assets/coffee1.jpg')`,
+          backgroundImage: `url('${aboutHeroImage}')`,
         }}
       />
 

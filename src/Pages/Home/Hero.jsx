@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import coffee1 from "../../assets/coffee1.jpg";
+import chemicaltube1 from "../../assets/chemicaltube1.jpg";
+import chemicalFactory1 from "../../assets/chemicalFactory1.jpg";
 
 const slides = [
   {
-    image: "/src/assets/coffee1.jpg",
+    image: `${coffee1}`,
     alt: "Premium Ethiopian Coffee",
   },
   {
-    image: "/src/assets/chemicaltube1.jpg",
+    image: `${chemicaltube1}`,
     alt: "Industrial Chemical Solutions",
   },
   {
-    image: "/src/assets/chemicalFactory1.jpg",
+    image: `${chemicalFactory1}`,
     alt: "Chemical Manufacturing",
   },
 ];

@@ -1,26 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Settings, Leaf } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
+import coffee2 from "../../assets/coffee2.png";
+import sesame1 from "../../assets/sesame1.png";
+import mungbean1 from "../../assets/mungbean1.png";
+import safflower1 from "../../assets/safflower1.png";
+import roastedcoffee from "../../assets/roastedcoffee.png";
 
 const slides = [
   {
-    image: "/src/assets/coffee2.png",
+    image: `${coffee2}`,
     alt: "Coffee roasting and export",
   },
   {
-    image: "/src/assets/sesame1.png",
+    image: `${sesame1}`,
     alt: "Agricultural processing",
   },
   {
-    image: "/src/assets/mungbean1.png",
+    image: `${mungbean1}`,
     alt: "Export logistics",
   },
   {
-    image: "/src/assets/safflower1.png",
+    image: `${safflower1}`,
     alt: "safflower processing",
   },
   {
-    image: "/src/assets/roastedcoffee.png",
+    image: `${roastedcoffee}`,
     alt: "roasted coffee export",
   },
 ];

@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import coffee1 from "../../assets/coffee1.jpg";
+import chemicaltube1 from "../../assets/chemicaltube1.jpg";
+import chemicalFactory1 from "../../assets/chemicalFactory1.jpg";
 
 const slides = [
   {
-    image: "/src/assets/coffee1.jpg",
+    image: `${coffee1}`,
     alt: "Premium coffee processing",
   },
   {
-    image: "/src/assets/chemicaltube1.jpg",
+    image: `${chemicaltube1}`,
     alt: "Industrial chemical solutions",
   },
   {
-    image: "/src/assets/chemicalFactory1.jpg",
+    image: `${chemicalFactory1}`,
     alt: "Chemical manufacturing",
   },
 ];

@@ -34,7 +34,7 @@ const WhoAreWe = () => {
               nisi ut aliquip ex ea commodo consequat.
             </p>
 
-            {/* Pass any route you need */}
+            {/* Pass any route  */}
             <SeeMoreButton to="/about/our-story" label="See More" />
           </div>
 

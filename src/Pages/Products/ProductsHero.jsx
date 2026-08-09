@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import productheroimage from "../../assets/chemicals2.jpg";
 
 const ProductsHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -22,7 +23,7 @@ const ProductsHero = () => {
       <div
         className="products-bg"
         style={{
-          backgroundImage: `url('/src/assets/chemicals2.jpg')`,
+          backgroundImage: `url('${productheroimage}')`,
         }}
       />
 
