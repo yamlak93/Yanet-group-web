@@ -5,7 +5,7 @@ import coffee2 from "../../assets/coffee2.png";
 import sesame1 from "../../assets/sesame1.png";
 import mungbean1 from "../../assets/mungbean1.png";
 import safflower1 from "../../assets/safflower1.png";
-import roastedcoffee from "../../assets/roastedcoffee.png";
+import roastedcoffee from "../../assets/roastedCoffee.png";
 
 const slides = [
   {
