@@ -1,0 +1,15 @@
+/* Global background matching the Hero */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-attachment: fixed; /* keeps the gradient nice when scrolling */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Optional: remove default body margin if not already done */
+* {
+  box-sizing: border-box;
+}
