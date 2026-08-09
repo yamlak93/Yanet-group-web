@@ -4,7 +4,7 @@ import SeeMoreButton from "../../Components/SeeMoreButton";
 
 const slides = [
   {
-    image: "/src/assets/ChemicalFactory1.jpg",
+    image: "/src/assets/chemicalFactory1.jpg",
     alt: "Chemical production line",
   },
   {

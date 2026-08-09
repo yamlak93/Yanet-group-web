@@ -3,7 +3,7 @@ import DisplayCard from "../../Components/DisplayCard";
 
 import coffeeImg from "../../assets/coffee1.jpg";
 import chemicalImg from "../../assets/Chemicaltube1.jpg";
-import logisticsImg from "../../assets/ChemicalFactory1.jpg";
+import logisticsImg from "../../assets/chemicalFactory1.jpg";
 
 const businesses = [
   {
@@ -32,7 +32,7 @@ const businesses = [
   },
 ];
 
-const Bussiness = () => {
+const HomeBussiness = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -141,4 +141,4 @@ const Bussiness = () => {
   );
 };
 
-export default Bussiness;
+export default HomeBussiness;

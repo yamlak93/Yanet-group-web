@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import SeeMoreButton from "../../Components/SeeMoreButton.jsx";
 import sesame1 from "../../assets/coffee1.jpg";
-import chemical2 from "../../assets/Chemicaltube1.jpg";
+import chemical2 from "../../assets/chemicaltube1.jpg";
 
 const WhoAreWe = () => {
   const [visible, setVisible] = useState(false);

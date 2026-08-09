@@ -7,11 +7,11 @@ const slides = [
     alt: "Premium coffee processing",
   },
   {
-    image: "/src/assets/Chemicaltube1.jpg",
+    image: "/src/assets/chemicaltube1.jpg",
     alt: "Industrial chemical solutions",
   },
   {
-    image: "/src/assets/ChemicalFactory1.jpg",
+    image: "/src/assets/chemicalFactory1.jpg",
     alt: "Chemical manufacturing",
   },
 ];

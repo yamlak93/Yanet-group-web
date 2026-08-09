@@ -7,11 +7,11 @@ const slides = [
     alt: "Premium Ethiopian Coffee",
   },
   {
-    image: "/src/assets/Chemicaltube1.jpg",
+    image: "/src/assets/chemicaltube1.jpg",
     alt: "Industrial Chemical Solutions",
   },
   {
-    image: "/src/assets/ChemicalFactory1.jpg",
+    image: "/src/assets/chemicalFactory1.jpg",
     alt: "Chemical Manufacturing",
   },
 ];

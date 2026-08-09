@@ -3,7 +3,7 @@ import HorizontalCard from "../../Components/HorizontalCard";
 import DisplayCard from "../../Components/DisplayCard";
 import SeeMoreButton from "../../Components/SeeMoreButton";
 
-import whyImg from "../../assets/Chemicaltube1.jpg";
+import whyImg from "../../assets/chemicaltube1.jpg";
 
 const leftCards = [
   {

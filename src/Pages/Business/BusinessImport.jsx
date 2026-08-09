@@ -4,7 +4,7 @@ import SeeMoreButton from "../../Components/SeeMoreButton";
 
 const slides = [
   {
-    image: "/src/assets/Chemicaltube1.jpg",
+    image: "/src/assets/chemicaltube1.jpg",
     alt: "Chemical laboratory equipment",
   },
   {
