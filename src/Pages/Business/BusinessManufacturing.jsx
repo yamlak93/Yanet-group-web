@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Factory } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
-
+import chemicalFactory1 from "../../assets/chemicalFactory1.jpg";
+import factory1 from "../../assets/factory1.jpg";
+import factory2 from "../../assets/factory2.jpg";
 const slides = [
   {
-    image: "/src/assets/chemicalFactory1.jpg",
+    image: `${chemicalFactory1}`,
     alt: "Chemical production line",
   },
   {
-    image: "/src/assets/factory1.jpg",
+    image: `${factory1}`,
     alt: "Industrial manufacturing",
   },
   {
-    image: "/src/assets/factory2.jpg",
+    image: `${factory2}`,
     alt: "Production facility",
   },
 ];

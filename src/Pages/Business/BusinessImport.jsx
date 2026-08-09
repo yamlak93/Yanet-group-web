@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FlaskConical } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
+import chemicaltube1 from "../../assets/chemicaltube1.jpg";
+import chemicals1 from "../../assets/chemicals1.jpg";
+import chemicals2 from "../../assets/chemicals2.jpg";
 
 const slides = [
   {
-    image: "/src/assets/chemicaltube1.jpg",
+    image: `${chemicaltube1}`,
     alt: "Chemical laboratory equipment",
   },
   {
-    image: "/src/assets/chemicals1.jpg",
+    image: `${chemicals1}`,
     alt: "Industrial chemical facility",
   },
   {
-    image: "/src/assets/chemicals2.jpg",
+    image: `${chemicals2}`,
     alt: "Industrial raw materials",
   },
 ];
