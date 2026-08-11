@@ -3,14 +3,14 @@ import SeeMoreButton from "../../Components/SeeMoreButton";
 
 // Import partner logos – replace with your real files
 import logo1 from "../../assets/coffee1.jpg";
-import logo2 from "../../assets/Chemicaltube1.jpg";
-import logo3 from "../../assets/ChemicalFactory1.jpg";
+import logo2 from "../../assets/chemicaltube1.jpg";
+import logo3 from "../../assets/chemicalFactory1.jpg";
 import logo4 from "../../assets/coffee1.jpg";
-import logo5 from "../../assets/Chemicaltube1.jpg";
-import logo6 from "../../assets/ChemicalFactory1.jpg";
+import logo5 from "../../assets/chemicaltube1.jpg";
+import logo6 from "../../assets/chemicalFactory1.jpg";
 import logo7 from "../../assets/coffee1.jpg";
-import logo8 from "../../assets/Chemicaltube1.jpg";
-import logo9 from "../../assets/ChemicalFactory1.jpg";
+import logo8 from "../../assets/chemicaltube1.jpg";
+import logo9 from "../../assets/chemicalFactory1.jpg";
 
 const partners = [
   { image: logo1, name: "Partner One" },
