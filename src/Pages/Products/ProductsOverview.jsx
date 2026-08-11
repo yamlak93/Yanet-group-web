@@ -3,7 +3,7 @@ import { Sprout, Cog } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
 
 import agriImg from "../../assets/coffee1.jpg";
-import industrialImg from "../../assets/ChemicalFactory1.jpg";
+import industrialImg from "../../assets/chemicalFactory1.jpg";
 
 const categories = [
   {
