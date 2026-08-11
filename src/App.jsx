@@ -5,38 +5,27 @@ import Footer from "./Components/Footer";
 import About from "./Pages/About/About";
 import Business from "./Pages/Business/Business";
 import Products from "./Pages/Products/Products";
+import Global from "./Pages/Global/Global";
+import Sustainability from "./Pages/Sustainability/Sustainability";
+import Contact from "./Pages/Contact/Contact";
+import AgriculturalProductsList from "./Pages/Products/AgriculturalProductsList";
+import ProductsDetailPage from "./Pages/Products/ProductsDetailPage";
+import ChemicalProductsLIst from "./Pages/Products/ChemicalProductsLIst";
+import OurStory from "./Pages/About/OurStory";
+import WhyUs from "./Pages/About/WhyUs";
+import Export from "./Pages/Business/Export";
+import Import from "./Pages/Business/Import";
+import Manufacturing from "./Pages/Business/Manufacturing";
+import ScrollToTop from "./ScrollToTop";
 
 // Placeholder pages – replace with real components later
 
-const OurStory = () => <div style={{ padding: "120px 2rem" }}>Our Story</div>;
-
-const WhyUs = () => <div style={{ padding: "120px 2rem" }}>Why Us</div>;
-const Export = () => (
-  <div style={{ padding: "120px 2rem" }}>Export Agricultural & Commodities</div>
-);
-const Import = () => (
-  <div style={{ padding: "120px 2rem" }}>
-    Import Chemical & Industrial Materials
-  </div>
-);
-const Manufacturing = () => (
-  <div style={{ padding: "120px 2rem" }}>Manufacturing Chemicals</div>
-);
-const Agricultural = () => (
-  <div style={{ padding: "120px 2rem" }}>Agricultural Products</div>
-);
-const Chemicals = () => <div style={{ padding: "120px 2rem" }}>Chemicals</div>;
-const GlobalNetwork = () => (
-  <div style={{ padding: "120px 2rem" }}>Global Network</div>
-);
 const Reach = () => <div style={{ padding: "120px 2rem" }}>Global Reach</div>;
 const Sourcing = () => (
   <div style={{ padding: "120px 2rem" }}>Sourcing Network</div>
 );
 const Partners = () => <div style={{ padding: "120px 2rem" }}>Partners</div>;
-const Sustainability = () => (
-  <div style={{ padding: "120px 2rem" }}>Sustainability</div>
-);
+
 const Commitment = () => (
   <div style={{ padding: "120px 2rem" }}>Our Commitment</div>
 );
@@ -49,11 +38,11 @@ const Environment = () => (
 const Governmental = () => (
   <div style={{ padding: "120px 2rem" }}>Governmental</div>
 );
-const Contact = () => <div style={{ padding: "120px 2rem" }}>Contact</div>;
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -71,11 +60,18 @@ function App() {
 
         {/* Products */}
         <Route path="/products" element={<Products />} />
-        <Route path="/products/agricultural" element={<Agricultural />} />
-        <Route path="/products/chemicals" element={<Chemicals />} />
+        <Route
+          path="/products/agricultural"
+          element={<AgriculturalProductsList />}
+        />
+        <Route path="/products/chemicals" element={<ChemicalProductsLIst />} />
+        <Route
+          path="/products/:category/:slug"
+          element={<ProductsDetailPage />}
+        />
 
         {/* Global Network */}
-        <Route path="/global-network" element={<GlobalNetwork />} />
+        <Route path="/global-network" element={<Global />} />
         <Route path="/global-network/reach" element={<Reach />} />
         <Route path="/global-network/sourcing" element={<Sourcing />} />
         <Route path="/global-network/partners" element={<Partners />} />
