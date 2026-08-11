@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, Factory, FlaskConical, Settings } from "lucide-react";
 
-import factoryImg from "../../assets/ChemicalFactory1.jpg";
-import tubeImg from "../../assets/Chemicaltube1.jpg";
+import factoryImg from "../../assets/chemicalFactory1.jpg";
+import tubeImg from "../../assets/chemicaltube1.jpg";
 import chemicalsImg from "../../assets/chemicals2.jpg";
 
 const slides = [
