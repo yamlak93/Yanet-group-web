@@ -17,13 +17,11 @@ import Export from "./Pages/Business/Export";
 import Import from "./Pages/Business/Import";
 import Manufacturing from "./Pages/Business/Manufacturing";
 import ScrollToTop from "./ScrollToTop";
+import GlobalReach from "./Pages/Global/GlobalReach";
+import GlobalSourcing from "./Pages/Global/GlobalSourcing";
 
 // Placeholder pages – replace with real components later
 
-const Reach = () => <div style={{ padding: "120px 2rem" }}>Global Reach</div>;
-const Sourcing = () => (
-  <div style={{ padding: "120px 2rem" }}>Sourcing Network</div>
-);
 const Partners = () => <div style={{ padding: "120px 2rem" }}>Partners</div>;
 
 const Commitment = () => (
@@ -72,8 +70,8 @@ function App() {
 
         {/* Global Network */}
         <Route path="/global-network" element={<Global />} />
-        <Route path="/global-network/reach" element={<Reach />} />
-        <Route path="/global-network/sourcing" element={<Sourcing />} />
+        <Route path="/global-network/reach" element={<GlobalReach />} />
+        <Route path="/global-network/sourcing" element={<GlobalSourcing />} />
         <Route path="/global-network/partners" element={<Partners />} />
 
         {/* Sustainability */}

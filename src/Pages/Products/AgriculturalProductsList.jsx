@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import ProductCard from "../../Components/ProductCard";
-import productsData from "../../data/ProductsDetailInfo.json";
+import productsData from "../../data/ProductsDetail";
 
 // Only agricultural products
 const allProducts = productsData.agricultural || [];

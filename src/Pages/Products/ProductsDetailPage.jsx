@@ -13,7 +13,7 @@ import {
   Beaker,
   Droplets,
 } from "lucide-react";
-import productsData from "../../data/ProductsDetailInfo.json";
+import productsData from "../../data/ProductsDetail";
 
 const findProduct = (slug) => {
   const groups = [
