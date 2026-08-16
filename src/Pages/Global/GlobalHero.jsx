@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import globalBg from "../../assets/global-network.jpg";
+import globalBg from "../../assets/global-connect.png";
 
 const GlobalHero = () => {
   const [loaded, setLoaded] = useState(false);

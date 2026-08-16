@@ -1,26 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { ChevronDown, Users, ShieldCheck, Leaf } from "lucide-react";
-import sourcingImg from "../../assets/coffee-farmer.png";
+import { ChevronDown, Leaf, Users, Globe2, ShieldCheck } from "lucide-react";
 
-const highlights = [
-  {
-    icon: <Users size={20} />,
-    title: "Ethically Sourced",
-    desc: "Supporting local farmers and communities",
-  },
-  {
-    icon: <ShieldCheck size={20} />,
-    title: "Quality Assured",
-    desc: "Strict selection and quality control",
-  },
-  {
-    icon: <Leaf size={20} />,
-    title: "Sustainable Growth",
-    desc: "Building long-term partnerships",
-  },
+// Replace with your sustainability image
+import commitmentImg from "../../assets/coffee1.jpg";
+
+const pillars = [
+  { icon: <Leaf size={20} />, label: "Responsible Sourcing" },
+  { icon: <Users size={20} />, label: "Community Empowerment" },
+  { icon: <Globe2 size={20} />, label: "Environmental Stewardship" },
+  { icon: <ShieldCheck size={20} />, label: "Ethical & Transparent" },
 ];
 
-const GlobalSourcingHero = () => {
+const SustainabilityCommitmentHero = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -36,65 +27,63 @@ const GlobalSourcingHero = () => {
   };
 
   return (
-    <section className="gs-hero">
-      <div className="gs-bg" />
+    <section className="sch-hero">
+      <div className="sch-bg" />
 
-      <div className="gs-shapes">
+      <div className="sch-shapes">
         <div className="shape s1" />
         <div className="shape s2" />
       </div>
 
       {/* Left content */}
-      <div className={`gs-content ${loaded ? "show" : ""}`}>
-        <span className="gs-badge">SOURCING NETWORK</span>
+      <div className={`sch-content ${loaded ? "show" : ""}`}>
+        <span className="sch-badge">SUSTAINABILITY</span>
 
-        <h1 className="gs-title">
-          Our Sourcing Network,
+        <h1 className="sch-title">
+          Our Commitment
           <br />
-          <span className="highlight">Rooted in Ethiopia</span>
+          for a <span className="highlight">Better Tomorrow</span>
         </h1>
 
-        <p className="gs-desc">
-          We work hand-in-hand with farmers, cooperatives, and suppliers across
-          Ethiopia to source the finest agricultural commodities with
-          consistency, integrity, and care.
+        <p className="sch-desc">
+          At Yanet Industrial PLC, sustainability is at the heart of our
+          business. We are committed to responsible sourcing, ethical practices,
+          environmental stewardship, and empowering communities across Ethiopia
+          and beyond.
         </p>
 
-        <div className="gs-highlights">
-          {highlights.map((item) => (
-            <div key={item.title} className="gs-item">
-              <div className="gs-icon">{item.icon}</div>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
+        <div className="sch-pillars">
+          {pillars.map((item) => (
+            <div key={item.label} className="sch-pillar">
+              <div className="sch-pillar-icon">{item.icon}</div>
+              <span>{item.label}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right circular image – same curve style as Businesshero */}
-      <div className={`gs-visual ${loaded ? "show" : ""}`}>
-        <div className="gs-frame">
+      {/* Right circular image – same curve style as Business / Sourcing heroes */}
+      <div className={`sch-visual ${loaded ? "show" : ""}`}>
+        <div className="sch-frame">
           <div
-            className="gs-frame-img"
-            style={{ backgroundImage: `url('${sourcingImg}')` }}
+            className="sch-frame-img"
+            style={{ backgroundImage: `url('${commitmentImg}')` }}
             role="img"
-            aria-label="Ethiopian farmers and agricultural sourcing network"
+            aria-label="Hands holding a young plant – sustainability commitment"
           />
         </div>
       </div>
 
       <button
         type="button"
-        className="gs-scroll"
+        className="sch-scroll"
         onClick={scrollToNext}
         aria-label="Scroll down"
       >
         <ChevronDown size={22} />
       </button>
 
-      <div className="gs-wave">
+      <div className="sch-wave">
         <svg
           viewBox="0 0 1440 100"
           preserveAspectRatio="none"
@@ -108,30 +97,30 @@ const GlobalSourcingHero = () => {
       </div>
 
       <style>{`
-        .gs-hero {
+        .sch-hero {
           position: relative;
           min-height: 110vh;
           min-height: 110dvh;
           display: flex;
           align-items: center;
           overflow: hidden;
-          background: #0e6f35;
+          background: #0a3d24;
         }
 
-        .gs-bg {
+        .sch-bg {
           position: absolute;
           inset: 0;
           z-index: 0;
           background: linear-gradient(
             115deg,
-            #0a3d24 0%,
-            #0f5d32 35%,
-            #117738 70%,
+            #06301c 0%,
+            #0a3d24 35%,
+            #0f5d32 70%,
             #0e6f35 100%
           );
         }
 
-        .gs-shapes {
+        .sch-shapes {
           position: absolute;
           inset: 0;
           z-index: 1;
@@ -159,7 +148,7 @@ const GlobalSourcingHero = () => {
           left: 28%;
         }
 
-        .gs-content {
+        .sch-content {
           position: relative;
           z-index: 5;
           max-width: 560px;
@@ -169,12 +158,12 @@ const GlobalSourcingHero = () => {
           transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .gs-content.show {
+        .sch-content.show {
           opacity: 1;
           transform: translateX(0);
         }
 
-        .gs-badge {
+        .sch-badge {
           display: inline-block;
           background: rgba(255, 255, 255, 0.12);
           color: #e8f5e9;
@@ -188,7 +177,7 @@ const GlobalSourcingHero = () => {
           margin-bottom: 1.15rem;
         }
 
-        .gs-title {
+        .sch-title {
           margin: 0 0 1.2rem;
           font-size: clamp(2.2rem, 4.8vw, 3.2rem);
           font-weight: 800;
@@ -197,11 +186,11 @@ const GlobalSourcingHero = () => {
           line-height: 1.12;
         }
 
-        .gs-title .highlight {
+        .sch-title .highlight {
           color: #86efac;
         }
 
-        .gs-desc {
+        .sch-desc {
           margin: 0 0 2rem;
           max-width: 440px;
           font-size: 1.02rem;
@@ -209,20 +198,21 @@ const GlobalSourcingHero = () => {
           color: rgba(255, 255, 255, 0.9);
         }
 
-        .gs-highlights {
+        .sch-pillars {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0.85rem;
           max-width: 480px;
         }
 
-        .gs-item {
+        .sch-pillar {
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
           gap: 0.5rem;
         }
 
-        .gs-icon {
+        .sch-pillar-icon {
           width: 42px;
           height: 42px;
           border-radius: 50%;
@@ -234,22 +224,14 @@ const GlobalSourcingHero = () => {
           justify-content: center;
         }
 
-        .gs-item h3 {
-          margin: 0;
-          font-size: 0.92rem;
-          font-weight: 700;
-          color: #ffffff;
+        .sch-pillar span {
+          font-size: 0.78rem;
+          font-weight: 600;
+          line-height: 1.35;
+          color: rgba(255, 255, 255, 0.88);
         }
 
-        .gs-item p {
-          margin: 0;
-          font-size: 0.8rem;
-          line-height: 1.45;
-          color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Same curve as Businesshero */
-        .gs-visual {
+        .sch-visual {
           position: absolute;
           right: 0;
           top: 50%;
@@ -261,11 +243,11 @@ const GlobalSourcingHero = () => {
           transition: opacity 1s ease 0.15s;
         }
 
-        .gs-visual.show {
+        .sch-visual.show {
           opacity: 1;
         }
 
-        .gs-frame {
+        .sch-frame {
           position: relative;
           width: 100%;
           height: 100%;
@@ -276,14 +258,14 @@ const GlobalSourcingHero = () => {
           border-right: none;
         }
 
-        .gs-frame-img {
+        .sch-frame-img {
           position: absolute;
           inset: 0;
           background-size: cover;
           background-position: center;
         }
 
-        .gs-scroll {
+        .sch-scroll {
           position: absolute;
           bottom: 120px;
           left: 50%;
@@ -300,19 +282,19 @@ const GlobalSourcingHero = () => {
           justify-content: center;
           cursor: pointer;
           box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
-          animation: gsBounce 2s ease-in-out infinite;
+          animation: schBounce 2s ease-in-out infinite;
         }
 
-        .gs-scroll:hover {
+        .sch-scroll:hover {
           transform: translateX(-50%) scale(1.08);
         }
 
-        @keyframes gsBounce {
+        @keyframes schBounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
           50% { transform: translateX(-50%) translateY(6px); }
         }
 
-        .gs-wave {
+        .sch-wave {
           position: absolute;
           bottom: -1px;
           left: 0;
@@ -321,19 +303,19 @@ const GlobalSourcingHero = () => {
           line-height: 0;
         }
 
-        .gs-wave svg {
+        .sch-wave svg {
           width: 100%;
           height: 90px;
           display: block;
         }
 
         @media (max-width: 960px) {
-          .gs-hero {
+          .sch-hero {
             min-height: 105vh;
             min-height: 105dvh;
           }
 
-          .gs-visual {
+          .sch-visual {
             width: min(55vw, 380px);
             top: auto;
             bottom: 130px;
@@ -341,58 +323,52 @@ const GlobalSourcingHero = () => {
             right: -20px;
           }
 
-          .gs-visual.show {
+          .sch-visual.show {
             transform: none;
           }
 
-          .gs-content {
+          .sch-content {
             padding: 7rem 1.8rem 16rem;
             max-width: 100%;
           }
 
-          .gs-scroll {
+          .sch-scroll {
             bottom: 100px;
           }
         }
 
         @media (max-width: 600px) {
-          .gs-hero {
+          .sch-hero {
             min-height: 100vh;
             min-height: 100dvh;
           }
 
-          .gs-visual {
+          .sch-visual {
             display: none;
           }
 
-          .gs-content {
+          .sch-content {
             padding: 6.5rem 1.3rem 5.5rem;
             text-align: center;
           }
 
-          .gs-desc {
+          .sch-desc {
             margin-left: auto;
             margin-right: auto;
           }
 
-          .gs-highlights {
-            grid-template-columns: 1fr;
-            max-width: 280px;
+          .sch-pillars {
+            grid-template-columns: 1fr 1fr;
+            max-width: 320px;
             margin: 0 auto;
             text-align: left;
           }
 
-          .gs-item {
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 0.75rem;
-          }
-
-          .gs-title {
+          .sch-title {
             font-size: 2.1rem;
           }
 
-          .gs-scroll {
+          .sch-scroll {
             bottom: 80px;
           }
         }
@@ -401,4 +377,4 @@ const GlobalSourcingHero = () => {
   );
 };
 
-export default GlobalSourcingHero;
+export default SustainabilityCommitmentHero;
