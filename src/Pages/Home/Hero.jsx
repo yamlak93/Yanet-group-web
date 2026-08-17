@@ -63,11 +63,9 @@ const Hero = () => {
         </h1>
 
         <p className="subheadline">
-          Hero Paragraph
           <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim, quis commodo consequat.
+          Welcome to Yanet Group connecting Ethiopia to global markets through
+          trusted trade, quality products, and sustainable industrial solutions.
         </p>
 
         <div className="indicators">

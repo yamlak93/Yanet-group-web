@@ -6,12 +6,12 @@ const cards = [
   {
     title: "Regional Presence",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Yanet Group operates from Ethiopia with a growing network of local and international business relationships. We connect Ethiopian agricultural producers with international buyers while supporting local industries through the import and distribution of industrial and chemical products. Our operations cover sourcing, quality control, logistics, documentation, customs coordination, and international shipment, with export routes connecting Ethiopian products to global markets through Djibouti Port.",
   },
   {
     title: "Strategic Markets",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Our international trade network serves key markets across Southeast Asia, South and East Asia, and the Middle East. Our export destinations include Indonesia, Malaysia, Bangladesh, China, Saudi Arabia, and the United Arab Emirates. We export green mung beans, white sesame seeds, coffee including Lekempti, safflower seeds, and castor seeds, while importing industrial and raw chemical products to support Ethiopian industries and businesses.",
   },
 ];
 

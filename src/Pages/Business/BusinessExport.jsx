@@ -66,8 +66,11 @@ const BusinessExport = () => {
               <Leaf size={22} />
             </div>
             <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              We export high-quality Ethiopian agricultural commodities to
+              international markets, including green mung beans, sesame seeds,
+              coffee, and other oilseeds and pulses. Our export operations focus
+              on reliable sourcing, quality standards, and efficient
+              international supply chains.
             </p>
             <SeeMoreButton to="/business/export" label="See more" />
           </div>

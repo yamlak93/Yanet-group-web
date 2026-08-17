@@ -82,8 +82,10 @@ const BusinessImport = () => {
               <FlaskConical size={22} />
             </div>
             <p className="card-text">
-              Chemical trading in equipment, with plants, logistics and
-              laboratory raw industrial chemical equipment.
+              We import and supply industrial and raw chemical products for
+              businesses and industries in Ethiopia. Our operations support
+              reliable sourcing, logistics, and distribution of essential
+              chemical materials and related industrial products.
             </p>
             <SeeMoreButton to="/business/import" label="See more" />
           </div>

@@ -57,8 +57,10 @@ const BusinessManufacturing = () => {
               <Factory size={22} />
             </div>
             <p className="card-text">
-              Manufacturing and testing with chemical production line to access
-              chemical production line process.
+              We engage in industrial chemical manufacturing, supporting the
+              production and supply of chemical products for various industrial
+              applications. Our manufacturing activities focus on quality,
+              efficiency, safety, and consistent production standards.
             </p>
             <SeeMoreButton to="/business/manufacturing" label="See more" />
           </div>

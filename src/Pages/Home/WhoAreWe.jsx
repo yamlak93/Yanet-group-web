@@ -28,10 +28,13 @@ const WhoAreWe = () => {
           <div className="who-content">
             <h3 className="card-title">Innovation in Industry</h3>
             <p className="card-desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Yanet Group is an Ethiopian business group engaged in import,
+              export, manufacturing, and industrial solutions. We connect
+              Ethiopian products and resources with international markets while
+              supplying quality industrial and chemical products to local
+              industries. Through trusted partnerships, operational excellence,
+              and a commitment to sustainable growth, we create lasting value
+              for our customers and partners.
             </p>
 
             {/* Pass any route  */}

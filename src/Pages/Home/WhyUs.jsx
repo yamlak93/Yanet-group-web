@@ -9,22 +9,22 @@ const leftCards = [
   {
     title: "Experience & Quality",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "With years of experience in trading, import, export, and industrial operations, Yanet Group focuses on delivering reliable products and maintaining high standards of quality across its business activities.",
   },
   {
     title: "Sustainable Practices",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We aim to conduct our operations responsibly by promoting efficient resource use, environmental awareness, and sustainable business practices throughout our supply and industrial activities.",
   },
   {
     title: "Sustainable ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We build long-term relationships with customers, suppliers, manufacturers, and international partners, creating reliable business connections based on trust, transparency, and mutual growth.",
   },
   {
     title: "Practices",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Our understanding of Ethiopian and international markets, combined with experience in agricultural commodities and industrial products, enables us to respond effectively to diverse customer and market needs.",
   },
 ];
 
@@ -79,7 +79,7 @@ const WhyUs = () => {
               image={whyImg}
               alt="Global Reach"
               title="Global Reach & Reliability"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+              description="Yanet Group connects Ethiopian products with international markets while bringing essential industrial and chemical products into the local market. We are committed to dependable supply, professional service, and lasting partnerships."
               to="/about/why-us"
               label="See more"
             />

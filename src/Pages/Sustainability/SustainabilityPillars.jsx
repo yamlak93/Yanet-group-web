@@ -8,25 +8,24 @@ const pillars = [
     icon: <Sun size={36} />,
     title: "Our Commitment",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "At Yanet Group, we are committed to responsible and sustainable growth across our import, export, and manufacturing operations. We create long-term value through quality, strong partnerships, responsible resource use, and continuous improvement.",
     to: "/sustainability/environment",
   },
   {
     icon: <Users size={36} />,
     title: "Responsibilities",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We recognize our responsibility to our customers, employees, suppliers, partners, communities, and the environment. Our approach emphasizes ethical business practices, workplace safety, product quality, responsible sourcing, and reliable service.",
     to: "/sustainability/responsibilities",
   },
   {
     icon: <Recycle size={36} />,
-    title: "Enviromental impact",
+    title: "Environmental Impact",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "As a company involved in industrial chemical manufacturing and trading, we promote responsible environmental management through efficient resource use, waste reduction, safe chemical handling, and environmentally responsible operational practices.",
     to: "/sustainability/commitment",
   },
 ];
-
 const SustainabilityPillars = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -75,7 +74,7 @@ const SustainabilityPillars = () => {
         >
           <HorizontalCard
             title="Governmental Responsibilities"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            description="Yanet Group conducts its business in accordance with applicable Ethiopian laws, regulations, customs requirements, and industry standards. We maintain proper documentation and compliance procedures across our import, export, manufacturing, logistics, and distribution activities, supporting transparent trade and responsible participation in Ethiopia's economy."
           />
           <div className="sp-progress-btn">
             <SeeMoreButton
