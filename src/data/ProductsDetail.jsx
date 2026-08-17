@@ -8,14 +8,14 @@ import roastedcoffee from "../assets/agri_products/roastedCoffee.png";
 import CastorSeeds from "../assets/agri_products/CastorSeeds.jpg";
 import Chickpeas from "../assets/agri_products/Chickpeas.jpg";
 
-import sodiumHydroxide from "../assets/chem_products/sodiumHydroxide.jpg";
-import sodaAsh from "../assets/chem_products/sodaAsh.jpg";
-import polyaluminiumChloride from "../assets/chem_products/polyaluminiumChloride.jpg";
-import chlorineTablets from "../assets/chem_products/chlorineTablets.jpg";
-import citricAcid from "../assets/chem_products/citricAcid.jpg";
-import phosphoricAcid from "../assets/chem_products/phosphoricAcid.jpg";
-import industrialPolymers from "../assets/chem_products/industrialPolymers.jpg";
-import industrialResins from "../assets/chem_products/industrialResins.jpg";
+import sodiumHydroxide from "../assets/chem_products/SodiumHydroxide.jpg";
+import sodaAsh from "../assets/chem_products/SodaAsh.jpg";
+import polyaluminiumChloride from "../assets/chem_products/PolyaluminiumChloride.jpg";
+import chlorineTablets from "../assets/chem_products/ChlorineTablets.jpg";
+import citricAcid from "../assets/chem_products/CitricAcid.jpg";
+import phosphoricAcid from "../assets/chem_products/PhosphoricAcid.jpg";
+import industrialPolymers from "../assets/chem_products/IndustrialPolymers.jpg";
+import industrialResins from "../assets/chem_products/IndustrialResins.jpg";
 
 const ProductsDetail = {
   agricultural: [
