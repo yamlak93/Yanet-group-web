@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import sustainImg from "../../assets/coffee1.jpg";
+import sustainImg from "../../assets/sustain.jpg";
 
 const SustainabilityHero = () => {
   const [loaded, setLoaded] = useState(false);

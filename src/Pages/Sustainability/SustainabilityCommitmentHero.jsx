@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronDown, Leaf, Users, Globe2, ShieldCheck } from "lucide-react";
 
 // Replace with your sustainability image
-import commitmentImg from "../../assets/coffee1.jpg";
+import commitmentImg from "../../assets/commitment.jpg";
 
 const pillars = [
   { icon: <Leaf size={20} />, label: "Responsible Sourcing" },

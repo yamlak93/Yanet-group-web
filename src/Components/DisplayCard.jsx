@@ -60,23 +60,34 @@ const DisplayCard = ({
             0 24px 50px rgba(46, 125, 50, 0.16);
         }
 
+        /* Fixed image area – size does not change with the image */
         .card-image {
           width: 100%;
           aspect-ratio: 4 / 3;
+          height: auto;
+          max-height: 220px;
           overflow: hidden;
-          background: #e8f5e9;
+          background: #f0fdf4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
         }
 
+        /* Fit image inside the area (no crop, no container growth) */
         .card-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          object-position: center;
           display: block;
           transition: transform 0.5s ease;
         }
 
         .display-card:hover .card-image img {
-          transform: scale(1.05);
+          transform: scale(1.04);
         }
 
         .card-icon {

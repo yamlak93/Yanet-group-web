@@ -53,7 +53,7 @@ const ContactInformation = () => {
       id: "g-email",
       icon: <Mail size={20} />,
       label: "Email",
-      value: "info@yanetindustrial.com",
+      value: "info@yanetgroup.com",
       copyable: true,
     },
     {
@@ -91,21 +91,21 @@ const ContactInformation = () => {
       id: "s-email",
       icon: <Mail size={20} />,
       label: "Chemical Sales Email",
-      value: "chemical.sales@yanetindustrial.com",
+      value: "chemical.sales@yanetgroup.com",
       copyable: true,
     },
     {
       id: "es-email",
       icon: <Mail size={20} />,
       label: "Agricultural Products Sales Email",
-      value: "export.sales@yanetindustrial.com",
+      value: "export.sales@yanetgroup.com",
       copyable: true,
     },
     {
       id: "s-export",
       icon: <Mail size={20} />,
       label: "Export Inquiries",
-      value: "export@yanetindustrial.com",
+      value: "export@yanetgroup.com",
       copyable: true,
     },
   ];

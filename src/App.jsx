@@ -21,18 +21,10 @@ import GlobalReach from "./Pages/Global/GlobalReach";
 import GlobalSourcing from "./Pages/Global/GlobalSourcing";
 import GlobalPartners from "./Pages/Global/GlobalPartners";
 import SustainabilityCommitment from "./Pages/Sustainability/SustainabilityCommitment";
+import SustainabilityResponsibility from "./Pages/Sustainability/SustainabilityResponsibility";
+import SustainabilityGovernment from "./Pages/Sustainability/SustainabilityGovernment";
 
 // Placeholder pages – replace with real components later
-
-const Responsibilities = () => (
-  <div style={{ padding: "120px 2rem" }}>Responsibilities</div>
-);
-const Environment = () => (
-  <div style={{ padding: "120px 2rem" }}>Environment</div>
-);
-const Governmental = () => (
-  <div style={{ padding: "120px 2rem" }}>Governmental</div>
-);
 
 function App() {
   return (
@@ -79,10 +71,12 @@ function App() {
         />
         <Route
           path="/sustainability/responsibilities"
-          element={<Responsibilities />}
+          element={<SustainabilityResponsibility />}
         />
-        <Route path="/sustainability/environment" element={<Environment />} />
-        <Route path="/sustainability/governmental" element={<Governmental />} />
+        <Route
+          path="/sustainability/governmental"
+          element={<SustainabilityGovernment />}
+        />
 
         {/* Contact */}
         <Route path="/contact" element={<Contact />} />

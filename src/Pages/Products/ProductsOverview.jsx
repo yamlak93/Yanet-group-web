@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Sprout, Cog } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
 
-import agriImg from "../../assets/coffee1.jpg";
+import agriImg from "../../assets/agri_products/coffee.png";
 import industrialImg from "../../assets/chemicalFactory1.jpg";
 
 const categories = [

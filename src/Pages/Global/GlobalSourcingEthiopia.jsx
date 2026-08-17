@@ -3,11 +3,11 @@ import React, { useEffect, useState, useRef } from "react";
 /* -------------------------------------------------------------------------- */
 /*  Map / region images – replace paths with your actual asset files          */
 /* -------------------------------------------------------------------------- */
-import ethiopiaMap from "../../assets/global-map.png";
+import ethiopiaMap from "../../assets/map/ethiopianMap.png";
 import amharaMap from "../../assets/map/amharaRegionMap.png";
-import oromiaMap from "../../assets/global-map.png";
-import tigrayMap from "../../assets/global-map.png";
-import snnpMap from "../../assets/global-map.png";
+import oromiaMap from "../../assets/map/oromiaRegionMap.png";
+import tigrayMap from "../../assets/map/TigrayRegionMap.png";
+import snnpMap from "../../assets/map/sidamaRegionMap.png";
 import afarMap from "../../assets/global-map.png";
 
 /* -------------------------------------------------------------------------- */
@@ -34,27 +34,9 @@ const regions = [
   },
   {
     id: "snnp",
-    name: "SNNP Region",
+    name: "Sidama Region",
     map: snnpMap,
     products: ["Coffee", "Pulses & Oilseeds"],
-  },
-  {
-    id: "afar",
-    name: "Afar Region",
-    map: afarMap,
-    products: ["Safflower Seeds", "Pulses"],
-  },
-  {
-    id: "snnp3",
-    name: "SNNP Region",
-    map: snnpMap,
-    products: ["Coffee", "Pulses & Oilseeds"],
-  },
-  {
-    id: "afar1",
-    name: "Afar Region",
-    map: afarMap,
-    products: ["Safflower Seeds", "Pulses"],
   },
 ];
 

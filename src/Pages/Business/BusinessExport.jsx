@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Settings, Leaf } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
-import coffee2 from "../../assets/coffee2.png";
-import sesame1 from "../../assets/sesame1.png";
-import mungbean1 from "../../assets/mungbean1.png";
-import safflower1 from "../../assets/safflower1.png";
-import roastedcoffee from "../../assets/roastedCoffee.png";
+import coffee2 from "../../assets/agri_products/coffee.png";
+import sesame1 from "../../assets/agri_products/sesame.png";
+import mungbean1 from "../../assets/agri_products/mungbean.png";
+import safflower1 from "../../assets/agri_products/safflower.png";
+import roastedcoffee from "../../assets/agri_products/roastedCoffee.png";
 
 const slides = [
   {

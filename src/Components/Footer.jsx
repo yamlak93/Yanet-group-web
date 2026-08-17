@@ -70,11 +70,13 @@ const Footer = () => {
                 </li>
                 <li>
                   <Phone size={16} />
-                  <span>+251 11 XXX XXXX</span>
+                  <span>+251 115 500 718</span>
+                  <span>|</span>
+                  <span>+251 115 540 670</span>
                 </li>
                 <li>
                   <Mail size={16} />
-                  <span>info@yanetindustrial.com</span>
+                  <span>info@yanetgroup.com.com</span>
                 </li>
               </ul>
             </div>

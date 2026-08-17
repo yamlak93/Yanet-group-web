@@ -53,7 +53,6 @@ const navItems = [
     submenu: [
       { label: "Our Commitment", path: "/sustainability/commitment" },
       { label: "Responsibilities", path: "/sustainability/responsibilities" },
-      { label: "Environment", path: "/sustainability/environment" },
       { label: "Governmental", path: "/sustainability/governmental" },
     ],
   },
@@ -125,18 +124,20 @@ const Navbar = () => {
 
               {item.submenu && (
                 <ul className="dropdown">
-                  {item.submenu.map((sub) => (
-                    <li key={sub.path}>
-                      <Link
-                        to={sub.path}
-                        className={`dropdown-link ${
-                          location.pathname === sub.path ? "active" : ""
-                        }`}
-                      >
-                        {sub.label}
-                      </Link>
-                    </li>
-                  ))}
+                  <div className="dropdown-panel">
+                    {item.submenu.map((sub) => (
+                      <li key={sub.path}>
+                        <Link
+                          to={sub.path}
+                          className={`dropdown-link ${
+                            location.pathname === sub.path ? "active" : ""
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </div>
                 </ul>
               )}
             </li>
@@ -286,6 +287,7 @@ const Navbar = () => {
 
         .nav-item {
           position: relative;
+          padding: 0.4rem 0; /* Creates smooth vertical hover area */
         }
 
         .nav-link {
@@ -303,7 +305,8 @@ const Navbar = () => {
         }
 
         .nav-link:hover,
-        .nav-item.active > .nav-link {
+        .nav-item.active > .nav-link,
+        .nav-item.has-sub:hover > .nav-link {
           color: #15803d;
           background: rgba(22, 163, 74, 0.08);
         }
@@ -317,40 +320,31 @@ const Navbar = () => {
           transform: rotate(180deg);
         }
 
-        /* ===== FIXED DROPDOWN – no gap, stays open while moving to it ===== */
+        /* ===== Seamless Dropdown Hover Bridge ===== */
         .dropdown {
           position: absolute;
           top: 100%;
           left: 50%;
-          transform: translateX(-50%) translateY(6px);
+          transform: translateX(-50%);
           min-width: 260px;
           list-style: none;
           margin: 0;
-          /* invisible bridge so mouse can travel from link → menu */
-          padding: 12px 0.5rem 0.5rem;
-          background: transparent;
+          padding-top: 8px; /* Acts as an invisible bridge between menu link & container */
           opacity: 0;
           visibility: hidden;
           pointer-events: none;
-          transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+          transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
           z-index: 50;
         }
 
-        /* visible panel inside the bridge */
-        .dropdown::before {
-          content: "";
-          position: absolute;
-          top: 12px;
-          left: 0;
-          right: 0;
-          bottom: 0;
+        .dropdown-panel {
           background: rgba(255, 255, 255, 0.97);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
           border: 1px solid rgba(0, 0, 0, 0.06);
           border-radius: 16px;
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-          z-index: -1;
+          padding: 0.5rem;
         }
 
         .nav-item.has-sub:hover .dropdown {
@@ -369,8 +363,6 @@ const Navbar = () => {
           text-decoration: none;
           border-radius: 10px;
           transition: background 0.2s ease, color 0.2s ease;
-          position: relative;
-          z-index: 1;
         }
 
         .dropdown-link:hover,

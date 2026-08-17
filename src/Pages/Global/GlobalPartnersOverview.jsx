@@ -3,26 +3,26 @@ import SeeMoreButton from "../../Components/SeeMoreButton";
 import DisplayCard from "../../Components/DisplayCard";
 
 // Import partner logos – replace with your real files
-import logo1 from "../../assets/coffee1.jpg";
-import logo2 from "../../assets/chemicaltube1.jpg";
-import logo3 from "../../assets/chemicalFactory1.jpg";
-import logo4 from "../../assets/coffee1.jpg";
-import logo5 from "../../assets/chemicaltube1.jpg";
-import logo6 from "../../assets/chemicalFactory1.jpg";
-import logo7 from "../../assets/coffee1.jpg";
-import logo8 from "../../assets/chemicaltube1.jpg";
-import logo9 from "../../assets/chemicalFactory1.jpg";
+import BGI from "../../assets/partners/BGI.png";
+import Dashn from "../../assets/partners/DASHN.jpg";
+import Habesha from "../../assets/partners/HABESHA.webp";
+import Heniken from "../../assets/partners/HENIKEN.png";
+import Komari from "../../assets/partners/KOMARI.png";
+import UB from "../../assets/partners/UB.jpg";
+import HBFuller from "../../assets/partners/HBFULLER.png";
+import Kersia from "../../assets/partners/KERSIA.jpg";
+import Kurita from "../../assets/partners/KURITA.png";
 
 const partners = [
-  { image: logo1, name: "Partner One" },
-  { image: logo2, name: "Partner Two" },
-  { image: logo3, name: "Partner Three" },
-  { image: logo4, name: "Partner Four" },
-  { image: logo5, name: "Partner Five" },
-  { image: logo6, name: "Partner Six" },
-  { image: logo7, name: "Partner Seven" },
-  { image: logo8, name: "Partner Eight" },
-  { image: logo9, name: "Partner Nine" },
+  { image: BGI, name: "BGI Ethiopia" },
+  { image: Dashn, name: "Dashen Brewery" },
+  { image: Habesha, name: "Habesha Breweries" },
+  { image: Heniken, name: "Heineken" },
+  { image: Komari, name: "Komari Beverage" },
+  { image: UB, name: "United Beverages" },
+  { image: HBFuller, name: "H.B. Fuller" },
+  { image: Kersia, name: "Kersia" },
+  { image: Kurita, name: "Kurita" },
 ];
 
 const PER_PAGE = 6;

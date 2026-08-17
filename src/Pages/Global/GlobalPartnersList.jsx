@@ -2,49 +2,70 @@ import React, { useEffect, useState, useRef, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import DisplayCard from "../../Components/DisplayCard";
 
-import olamLogo from "../../assets/coffee2.png";
-import etgLogo from "../../assets/coffee2.png";
-import maerskLogo from "../../assets/coffee2.png";
-import sgsLogo from "../../assets/coffee2.png";
-import bungeLogo from "../../assets/coffee2.png";
-import dpWorldLogo from "../../assets/coffee2.png";
+import BGI from "../../assets/partners/BGI.png";
+import Dashn from "../../assets/partners/DASHN.jpg";
+import Habesha from "../../assets/partners/HABESHA.webp";
+import Heniken from "../../assets/partners/HENIKEN.png";
+import Komari from "../../assets/partners/KOMARI.png";
+import UB from "../../assets/partners/UB.jpg";
+import HBFuller from "../../assets/partners/HBFULLER.png";
+import Kersia from "../../assets/partners/KERSIA.jpg";
+import Kurita from "../../assets/partners/KURITA.png";
 
 const partners = [
   {
-    id: "olam",
-    name: "Olam Agri",
-    logo: olamLogo,
-    desc: "Global agri-business leader in sourcing and supply chain.",
+    id: "BGI",
+    name: "BGI Ethiopia",
+    logo: BGI,
+    desc: "One of Ethiopia's leading beverage manufacturing companies, producing a portfolio of beer and malt beverages.",
   },
   {
-    id: "etg",
-    name: "ETG",
-    logo: etgLogo,
-    desc: "Connecting global markets with quality Ethiopian commodities.",
+    id: "Dashn",
+    name: "DASHN",
+    logo: Dashn,
+    desc: "An established Ethiopian brewing company producing beer for the local market.",
   },
   {
-    id: "maersk",
-    name: "Maersk",
-    logo: maerskLogo,
-    desc: "Global leader in logistics and supply chain solutions.",
+    id: "habesha",
+    name: "HABESHA",
+    logo: Habesha,
+    desc: "An Ethiopian brewery known for producing Habesha beer and serving the country's growing beverage market.",
   },
   {
-    id: "sgs",
-    name: "SGS",
-    logo: sgsLogo,
-    desc: "International inspection, verification, testing and certification.",
+    id: "Heniken",
+    name: "HEINEKEN",
+    logo: Heniken,
+    desc: "A global brewing company with a strong presence in Ethiopia through its Kilinto, Harar, and Bedele breweries.",
   },
   {
-    id: "bunge",
-    name: "Bunge",
-    logo: bungeLogo,
-    desc: "Connecting farmers to global food, feed, and fuel markets.",
+    id: "Komari",
+    name: "KOMARI",
+    logo: Komari,
+    desc: "An Ethiopian beverage company focused on innovative, locally produced alcoholic beverages, including hard seltzer.",
   },
   {
-    id: "dp-world",
-    name: "DP World",
-    logo: dpWorldLogo,
-    desc: "Enabling smarter trade through world-class port and logistics solutions.",
+    id: "ub",
+    name: "UNITED BEVERAGES",
+    logo: UB,
+    desc: "An Ethiopian beverage manufacturer producing Anbessa, Seven, and Guadegna beer brands.",
+  },
+  {
+    id: "hbfuller",
+    name: "H.B. FULLER",
+    logo: HBFuller,
+    desc: "A global specialty chemicals company specializing in adhesives, sealants, and functional coatings for diverse industries.",
+  },
+  {
+    id: "kersia",
+    name: "KERSIA",
+    logo: Kersia,
+    desc: "An international provider of hygiene and safety solutions serving the food, agriculture, and agricultural-processing industries.",
+  },
+  {
+    id: "Kurita",
+    name: "KURITA",
+    logo: Kurita,
+    desc: "A global provider of water treatment chemicals, technologies, and environmental solutions for industrial applications.",
   },
 ];
 

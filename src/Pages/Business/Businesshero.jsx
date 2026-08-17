@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import coffee1 from "../../assets/coffee1.jpg";
+import coffee1 from "../../assets/agri_products/coffee.png";
 import chemicaltube1 from "../../assets/chemicaltube1.jpg";
 import chemicalFactory1 from "../../assets/chemicalFactory1.jpg";
 

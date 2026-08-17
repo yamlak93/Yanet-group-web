@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 // Replace this with your real image path/URL later
-import benefitImage from "../../assets/coffee2.png";
+import benefitImage from "../../assets/grow.png";
 
 const benefits = [
   {

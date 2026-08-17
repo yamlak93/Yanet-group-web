@@ -1,7 +1,21 @@
 // src/data/productsDetail.jsx
 
-import coffee2 from "../assets/coffee2.png";
-import sesame1 from "../assets/sesame1.png";
+import coffee2 from "../assets/agri_products/coffee.png";
+import sesame from "../assets/agri_products/sesame.png";
+import mugbeans from "../assets/agri_products/mungbean.png";
+import safflower from "../assets/agri_products/safflower.png";
+import roastedcoffee from "../assets/agri_products/roastedCoffee.png";
+import CastorSeeds from "../assets/agri_products/CastorSeeds.jpg";
+import Chickpeas from "../assets/agri_products/Chickpeas.jpg";
+
+import sodiumHydroxide from "../assets/chem_products/sodiumHydroxide.jpg";
+import sodaAsh from "../assets/chem_products/sodaAsh.jpg";
+import polyaluminiumChloride from "../assets/chem_products/polyaluminiumChloride.jpg";
+import chlorineTablets from "../assets/chem_products/chlorineTablets.jpg";
+import citricAcid from "../assets/chem_products/citricAcid.jpg";
+import phosphoricAcid from "../assets/chem_products/phosphoricAcid.jpg";
+import industrialPolymers from "../assets/chem_products/industrialPolymers.jpg";
+import industrialResins from "../assets/chem_products/industrialResins.jpg";
 
 const ProductsDetail = {
   agricultural: [
@@ -16,8 +30,8 @@ const ProductsDetail = {
       grade: "Sprout Grade",
       shortDescription:
         "Premium Ethiopian green mung beans sourced from selected farming regions and prepared for international markets.",
-      heroImage: coffee2,
-      gallery: [coffee2],
+      heroImage: mugbeans,
+      gallery: [mugbeans],
       keySpec: {
         purity: "99%",
         moisture: "≤ 14%",
@@ -101,8 +115,8 @@ const ProductsDetail = {
       grade: "Humera Type",
       shortDescription:
         "Premium Humera-type white sesame seeds known for high oil content and superior quality for export markets.",
-      heroImage: coffee2,
-      gallery: [coffee2],
+      heroImage: sesame,
+      gallery: [sesame],
       keySpec: {
         oilContent: "≥ 48%",
         moisture: "≤ 7%",
@@ -258,8 +272,8 @@ const ProductsDetail = {
       grade: "Export Grade",
       shortDescription:
         "Cleaned Ethiopian safflower seeds prepared for international oilseed and commodity buyers.",
-      heroImage: coffee2,
-      gallery: [coffee2],
+      heroImage: safflower,
+      gallery: [safflower],
       keySpec: {
         purity: "Export grade",
         moisture: "Controlled",
@@ -326,8 +340,8 @@ const ProductsDetail = {
       grade: "Industrial / Export Grade",
       shortDescription:
         "Quality castor seeds for industrial processing and export, moisture-controlled and graded.",
-      heroImage: coffee2,
-      gallery: [coffee2],
+      heroImage: CastorSeeds,
+      gallery: [CastorSeeds],
       keySpec: {
         moisture: "Controlled",
         grade: "Graded",
@@ -404,8 +418,8 @@ const ProductsDetail = {
       grade: "Food Grade",
       shortDescription:
         "Sorted Ethiopian chickpeas prepared for food processing and export markets.",
-      heroImage: coffee2,
-      gallery: [coffee2],
+      heroImage: Chickpeas,
+      gallery: [Chickpeas],
       keySpec: {
         grade: "Food grade",
         moisture: "Within export norms",
@@ -488,8 +502,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Caustic soda for detergent, soap, and industrial process applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: sodiumHydroxide,
+      gallery: [sodiumHydroxide],
       keySpec: {
         purity: "As per grade",
         form: "Flake",
@@ -561,8 +575,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Sodium carbonate for glass, detergent, and general industrial applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: sodaAsh,
+      gallery: [sodaAsh],
       keySpec: {
         form: "Powder",
         grade: "Industrial",
@@ -628,8 +642,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "PAC coagulant for municipal and industrial water treatment applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: polyaluminiumChloride,
+      gallery: [polyaluminiumChloride],
       keySpec: {
         use: "Water treatment",
         form: "Powder",
@@ -691,8 +705,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Disinfection tablets for water treatment and sanitation applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: chlorineTablets,
+      gallery: [chlorineTablets],
       keySpec: {
         form: "Tablet",
         use: "Disinfection",
@@ -754,8 +768,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Food-grade citric acid for beverage, food processing, and related applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: citricAcid,
+      gallery: [citricAcid],
       keySpec: {
         grade: "Food Grade",
         form: "Crystal",
@@ -814,8 +828,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Food-grade phosphoric acid used in beverage formulation and related processes.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: phosphoricAcid,
+      gallery: [phosphoricAcid],
       keySpec: {
         form: "Liquid",
         grade: "Food Grade",
@@ -876,8 +890,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Polymer raw materials for industrial manufacturing and process applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: industrialPolymers,
+      gallery: [industrialPolymers],
       keySpec: {
         form: "Granular",
         grade: "Technical",
@@ -938,8 +952,8 @@ const ProductsDetail = {
       origin: "International supply",
       shortDescription:
         "Process resins and related materials for industrial manufacturing applications.",
-      heroImage: sesame1,
-      gallery: [sesame1],
+      heroImage: industrialResins,
+      gallery: [industrialResins],
       keySpec: {
         form: "Liquid",
         grade: "Technical",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import contactImg from "../../assets/coffee1.jpg";
+import contactImg from "../../assets/contact.png";
 
 const ContactHero = () => {
   const [loaded, setLoaded] = useState(false);

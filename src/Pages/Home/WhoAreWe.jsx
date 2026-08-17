@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import SeeMoreButton from "../../Components/SeeMoreButton.jsx";
-import sesame1 from "../../assets/coffee1.jpg";
+import sesame1 from "../../assets/agri_products/coffee.png";
 import chemical2 from "../../assets/chemicaltube1.jpg";
 
 const WhoAreWe = () => {

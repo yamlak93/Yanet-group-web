@@ -1,76 +1,74 @@
 import React, { useEffect, useState, useRef } from "react";
 
 /* -------------------------------------------------------------------------- */
-/*  Country / partner images – replace paths with your actual asset files     */
-/* -------------------------------------------------------------------------- */
-import chinaMap from "../../assets/map/amharaRegionMap.png";
-import uaeMap from "../../assets/map/amharaRegionMap.png";
-import indiaMap from "../../assets/map/amharaRegionMap.png";
-import kenyaMap from "../../assets/map/amharaRegionMap.png";
-import southAfricaMap from "../../assets/map/amharaRegionMap.png";
-import belgiumMap from "../../assets/map/amharaRegionMap.png";
-import othersMap from "../../assets/map/amharaRegionMap.png";
-
-/* -------------------------------------------------------------------------- */
-/*  Country / partner data                                                    */
+/*  Country / partner data – flags from flagcdn.com                           */
 /* -------------------------------------------------------------------------- */
 const partners = [
   {
     id: "china",
     name: "China",
-    map: chinaMap,
+    flagCode: "cn",
     products: ["Top product manufacturer"],
   },
   {
     id: "uae",
     name: "UAE",
-    map: uaeMap,
+    flagCode: "ae",
     products: ["Top product manufacturer"],
   },
   {
     id: "india",
     name: "India",
-    map: indiaMap,
+    flagCode: "in",
     products: ["Top product manufacturer"],
   },
   {
     id: "kenya",
     name: "Kenya",
-    map: kenyaMap,
+    flagCode: "ke",
     products: ["Top product manufacturer"],
   },
   {
     id: "south-africa",
     name: "South Africa",
-    map: southAfricaMap,
+    flagCode: "za",
     products: ["Top product manufacturer"],
   },
   {
     id: "belgium",
     name: "Belgium",
-    map: belgiumMap,
+    flagCode: "be",
     products: ["Top product manufacturer"],
   },
   {
     id: "others",
     name: "Others",
-    map: othersMap,
+    flagCode: null, // no single flag – globe shown
     products: ["Top product manufacturer"],
   },
 ];
 
+const flagUrl = (code) =>
+  code ? `https://flagcdn.com/w160/${code}.png` : null;
+
 /* -------------------------------------------------------------------------- */
 /*  Single partner / country card                                             */
 /* -------------------------------------------------------------------------- */
-const PartnerCard = ({ name, map, products }) => (
+const PartnerCard = ({ name, flagCode, products }) => (
   <article className="rmc-card">
     <div className="rmc-map-wrap">
-      <img
-        src={map}
-        alt={`${name} map`}
-        className="rmc-map-img"
-        loading="lazy"
-      />
+      {flagCode ? (
+        <img
+          src={flagUrl(flagCode)}
+          alt={`${name} flag`}
+          className="rmc-map-img"
+          loading="lazy"
+        />
+      ) : (
+        <span className="rmc-globe" aria-hidden="true">
+          🌍
+        </span>
+      )}
     </div>
     <h3 className="rmc-title">{name}</h3>
     <ul className="rmc-products">
@@ -116,7 +114,6 @@ const GlobalSourcingChemicalRegions = () => {
   return (
     <section className="sre-section" ref={sectionRef}>
       <div className="sre-container">
-        {/* Header */}
         <div className={`sre-header ${visible ? "show" : ""}`}>
           <span className="sre-badge">OUR GLOBAL PARTNERS</span>
           <h2 className="sre-title">
@@ -130,14 +127,13 @@ const GlobalSourcingChemicalRegions = () => {
           </p>
         </div>
 
-        {/* Body: country cards only (no big map) */}
         <div className={`sre-body ${visible ? "show" : ""}`}>
           <div className="sre-cards">
             {partners.map((p) => (
               <PartnerCard
                 key={p.id}
                 name={p.name}
-                map={p.map}
+                flagCode={p.flagCode}
                 products={p.products}
               />
             ))}
@@ -157,7 +153,6 @@ const GlobalSourcingChemicalRegions = () => {
           margin: 0 auto;
         }
 
-        /* Header */
         .sre-header {
           margin-bottom: 2.4rem;
           opacity: 0;
@@ -205,7 +200,6 @@ const GlobalSourcingChemicalRegions = () => {
           color: #64748b;
         }
 
-        /* Body – full width cards, no map */
         .sre-body {
           opacity: 0;
           transform: translateY(22px);
@@ -224,7 +218,6 @@ const GlobalSourcingChemicalRegions = () => {
           min-width: 0;
         }
 
-        /* Partner / country card */
         .rmc-card {
           background: #ffffff;
           border-radius: 18px;
@@ -244,23 +237,29 @@ const GlobalSourcingChemicalRegions = () => {
         }
 
         .rmc-map-wrap {
-          width: 78px;
-          height: 68px;
+          width: 72px;
+          height: 52px;
           margin-bottom: 0.9rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 12px;
+          border-radius: 10px;
           overflow: hidden;
           background: #f0fdf4;
+          box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
         }
 
         .rmc-map-img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
           display: block;
           transition: transform 0.35s ease;
+        }
+
+        .rmc-globe {
+          font-size: 1.75rem;
+          line-height: 1;
         }
 
         .rmc-card:hover .rmc-map-img {
@@ -303,7 +302,6 @@ const GlobalSourcingChemicalRegions = () => {
           display: inline-flex;
         }
 
-        /* Responsive */
         @media (max-width: 1100px) {
           .sre-cards {
             grid-template-columns: repeat(4, 1fr);

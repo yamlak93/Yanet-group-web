@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import DisplayCard from "../../Components/DisplayCard";
 
-import coffeeImg from "../../assets/coffee1.jpg";
+import coffeeImg from "../../assets/agri_products/coffee.png";
 import chemicalImg from "../../assets/chemicaltube1.jpg";
 import logisticsImg from "../../assets/chemicalFactory1.jpg";
 

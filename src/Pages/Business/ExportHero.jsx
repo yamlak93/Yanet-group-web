@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, Sprout, Ship, Globe2 } from "lucide-react";
 
-import coffeeImg from "../../assets/coffee1.jpg";
-import mungbean from "../../assets/mungbean1.png";
-import safflower from "../../assets/safflower1.png";
-import sesame from "../../assets/sesame1.png";
+import coffeeImg from "../../assets/agri_products/coffee.png";
+import mungbean from "../../assets/agri_products/mungbean.png";
+import safflower from "../../assets/agri_products/safflower.png";
+import sesame from "../../assets/agri_products/sesame.png";
 
 const slides = [
   {
