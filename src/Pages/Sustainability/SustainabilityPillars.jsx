@@ -22,7 +22,7 @@ const pillars = [
     icon: <Recycle size={36} />,
     title: "Environmental Impact",
     description:
-      "As a company involved in industrial chemical manufacturing and trading, we promote responsible environmental management through efficient resource use, waste reduction, safe chemical handling, and environmentally responsible operational practices.",
+      "As a company involved in industrial chemicals manufacturing and trading, we promote responsible environmental management through efficient resource use, waste reduction, safe chemical handling, and environmentally responsible operational practices.",
     to: "/sustainability/commitment",
   },
 ];
