@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
-import contactImg from "../../assets/contact.png";
+import contactImg from "../../assets/hand-shaking.jpg";
 
 const ContactHero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -12,32 +12,47 @@ const ContactHero = () => {
 
   const scrollToNext = () => {
     window.scrollTo({
-      top: window.innerHeight * 0.95,
+      top: window.innerHeight * 0.92,
       behavior: "smooth",
     });
   };
 
   return (
     <section className="contact-hero">
-      {/* Background image */}
+      {/* Right-side photo */}
       <div
-        className="contact-bg"
+        className="contact-photo"
         style={{ backgroundImage: `url('${contactImg}')` }}
+        role="img"
+        aria-label="Business partners shaking hands"
       />
 
-      {/* Green overlay */}
-      <div className="contact-overlay" />
+      {/* Left green panel + soft fade into photo */}
+      <div className="contact-panel" />
+
+      {/* Optional faint map texture on left */}
+      <div className="contact-map-texture" aria-hidden="true" />
 
       <div className={`contact-content ${loaded ? "show" : ""}`}>
-        <h1 className="contact-title">Contact Us</h1>
+        <h1 className="contact-title">
+          <span className="line-white">Let’s Grow</span>
+          <span className="line-accent">Together</span>
+        </h1>
 
-        <div className="contact-desc-box">
-          <p>
-            Ready to partner with us? Reach out to our team for product
-            inquiries, quotations, partnership opportunities, or general
-            information. We’re here to support your business across Ethiopia and
-            global markets.
-          </p>
+        <p className="contact-desc">
+          We are always ready to connect, collaborate
+          <br />
+          and create value together.
+        </p>
+
+        <div className="contact-rule" />
+
+        <div className="contact-tags">
+          <span>INQUIRIES</span>
+          <span className="dot">•</span>
+          <span>PARTNERSHIPS</span>
+          <span className="dot">•</span>
+          <span>OPPORTUNITIES</span>
         </div>
       </div>
 
@@ -47,21 +62,8 @@ const ContactHero = () => {
         onClick={scrollToNext}
         aria-label="Scroll down"
       >
-        <ChevronDown size={22} />
+        <ChevronDown size={20} />
       </button>
-
-      <div className="contact-wave">
-        <svg
-          viewBox="0 0 1440 90"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0,50 C360,90 720,10 1080,45 C1260,65 1380,40 1440,50 L1440,90 L0,90 Z"
-            fill="#ffffff"
-          />
-        </svg>
-      </div>
 
       <style>{`
         .contact-hero {
@@ -71,98 +73,127 @@ const ContactHero = () => {
           display: flex;
           align-items: center;
           overflow: hidden;
-          background: #14532d;
-          border-radius: 0 0 36px 36px;
+          background: #06301c;
         }
 
-        .contact-bg {
+        .contact-photo {
           position: absolute;
-          inset: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 58%;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
-          transform: scale(1.04);
-          animation: contactZoom 14s ease-out forwards;
-          border-radius: 0 0 36px 36px;
+          z-index: 0;
         }
 
-        @keyframes contactZoom {
-          from { transform: scale(1.08); }
-          to { transform: scale(1); }
-        }
-
-        .contact-overlay {
+        .contact-panel {
           position: absolute;
           inset: 0;
           z-index: 1;
           background: linear-gradient(
-            105deg,
-            rgba(20, 83, 45, 0.94) 0%,
-            rgba(22, 101, 52, 0.82) 40%,
-            rgba(30, 120, 60, 0.55) 70%,
-            rgba(46, 140, 70, 0.3) 100%
+            90deg,
+            #052618 0%,
+            #06301c 28%,
+            #0a3d24 42%,
+            rgba(10, 61, 36, 0.92) 52%,
+            rgba(10, 61, 36, 0.55) 62%,
+            rgba(10, 61, 36, 0.15) 72%,
+            transparent 82%
           );
-          border-radius: 0 0 36px 36px;
           pointer-events: none;
+        }
+
+        .contact-map-texture {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 55%;
+          z-index: 2;
+          opacity: 0.12;
+          background-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 1px, transparent 1px);
+          background-size: 18px 18px;
+          pointer-events: none;
+          mask-image: linear-gradient(90deg, black 40%, transparent 90%);
+          -webkit-mask-image: linear-gradient(90deg, black 40%, transparent 90%);
         }
 
         .contact-content {
           position: relative;
           z-index: 5;
-          max-width: 640px;
-          padding: 8rem 2rem 6rem 3.5rem;
+          max-width: 520px;
+          padding: 5rem 2rem 5rem 4rem;
           opacity: 0;
-          transform: translateY(28px);
+          transform: translateX(-24px);
           transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .contact-content.show {
           opacity: 1;
-          transform: translateY(0);
-        }
-
-        .contact-label {
-          margin: 0 0 0.4rem;
-          font-size: 1.05rem;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.8);
+          transform: translateX(0);
         }
 
         .contact-title {
-          margin: 0 0 1.5rem;
-          font-size: clamp(2.3rem, 5vw, 3.4rem);
+          margin: 0 0 1.25rem;
+          font-size: clamp(2.6rem, 5.5vw, 3.75rem);
           font-weight: 800;
-          color: #ffffff;
+          line-height: 1.05;
           letter-spacing: -0.5px;
-          text-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-desc-box {
-          border: 1.5px solid rgba(255, 255, 255, 0.3);
-          border-radius: 18px;
-          padding: 1.4rem 1.6rem;
-          background: rgba(255, 255, 255, 0.08);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-          max-width: 520px;
+        .contact-title .line-white {
+          display: block;
+          color: #ffffff;
         }
 
-        .contact-desc-box p {
-          margin: 0;
+        .contact-title .line-accent {
+          display: block;
+          color: #e8b84a;
+        }
+
+        .contact-desc {
+          margin: 0 0 1.35rem;
           font-size: 1.05rem;
-          line-height: 1.75;
-          color: rgba(255, 255, 255, 0.92);
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.88);
+          max-width: 380px;
+        }
+
+        .contact-rule {
+          width: 48px;
+          height: 3px;
+          background: #e8b84a;
+          border-radius: 2px;
+          margin-bottom: 1.35rem;
+        }
+
+        .contact-tags {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.35rem 0.15rem;
+          font-size: 0.78rem;
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-tags .dot {
+          margin: 0 0.45rem;
+          color: #e8b84a;
         }
 
         .contact-scroll {
           position: absolute;
-          bottom: 110px;
+          bottom: 1.5rem;
           left: 50%;
           transform: translateX(-50%);
           z-index: 6;
-          width: 48px;
-          height: 48px;
+          width: 42px;
+          height: 42px;
           border-radius: 50%;
           border: none;
           background: #16a34a;
@@ -171,7 +202,7 @@ const ContactHero = () => {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+          box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
           animation: contactBounce 2s ease-in-out infinite;
         }
 
@@ -181,62 +212,49 @@ const ContactHero = () => {
 
         @keyframes contactBounce {
           0%, 100% { transform: translateX(-50%) translateY(0); }
-          50% { transform: translateX(-50%) translateY(6px); }
-        }
-
-        .contact-wave {
-          position: absolute;
-          bottom: -1px;
-          left: 0;
-          right: 0;
-          z-index: 4;
-          line-height: 0;
-        }
-
-        .contact-wave svg {
-          width: 100%;
-          height: 80px;
-          display: block;
+          50% { transform: translateX(-50%) translateY(5px); }
         }
 
         @media (max-width: 900px) {
+          .contact-photo {
+            width: 100%;
+          }
+
+          .contact-panel {
+            background: linear-gradient(
+              180deg,
+              rgba(5, 38, 24, 0.94) 0%,
+              rgba(6, 48, 28, 0.9) 55%,
+              rgba(6, 48, 28, 0.82) 100%
+            );
+          }
+
           .contact-content {
-            padding: 7rem 1.8rem 5.5rem;
+            padding: 6.5rem 1.6rem 5rem;
             max-width: 100%;
           }
 
-          .contact-hero,
-          .contact-bg,
-          .contact-overlay {
-            border-radius: 0 0 28px 28px;
+          .contact-map-texture {
+            width: 100%;
+            opacity: 0.06;
           }
         }
 
         @media (max-width: 520px) {
           .contact-title {
-            font-size: 2.15rem;
+            font-size: 2.35rem;
           }
 
           .contact-content {
-            padding: 6.5rem 1.3rem 5rem;
+            padding: 6rem 1.25rem 4.5rem;
           }
 
-          .contact-desc-box {
-            padding: 1.2rem 1.3rem;
-          }
-
-          .contact-desc-box p {
+          .contact-desc {
             font-size: 0.98rem;
           }
 
-          .contact-scroll {
-            bottom: 85px;
-          }
-
-          .contact-hero,
-          .contact-bg,
-          .contact-overlay {
-            border-radius: 0 0 22px 22px;
+          .contact-tags {
+            font-size: 0.7rem;
           }
         }
       `}</style>

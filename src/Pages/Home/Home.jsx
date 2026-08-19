@@ -3,14 +3,20 @@ import Hero from "./Hero";
 import WhoAreWe from "./WhoAreWe";
 import HomeBusiness from "./HomeBusiness";
 import WhyUs from "./WhyUs";
+import HeroAbout from "./HeroAbout";
+import HomeGlobal from "./HomeGlobal";
+import HomeProducts from "./HomeProducts";
+import HomeSustainability from "./HomeSustainability";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <WhoAreWe />
+      <HeroAbout />
       <HomeBusiness />
-      <WhyUs />
+      <HomeGlobal />
+      <HomeProducts />
+      <HomeSustainability />
     </>
   );
 };
