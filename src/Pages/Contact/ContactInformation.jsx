@@ -124,7 +124,7 @@ const ContactInformation = () => {
             <CheckCircle2 size={22} />
             <div>
               <strong>Message sent</strong>
-              <span>Thank you — we’ll get back to you soon.</span>
+              <span>Thank you! We’ll get back to you soon.</span>
             </div>
           </>
         )}
