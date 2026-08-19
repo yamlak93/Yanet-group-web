@@ -9,7 +9,7 @@ import {
   Package,
   ArrowRight,
 } from "lucide-react";
-import productsData from "../../data/productsDetail";
+import productsData from "../../data/ProductsDetail";
 
 const stats = [
   { icon: <Calendar size={22} />, value: "20+", label: "Years of Experience" },
