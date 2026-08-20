@@ -121,7 +121,7 @@ const HeroAbout = () => {
           gap: 0.45rem;
           padding: 0.8rem 1.45rem;
           border-radius: 8px;
-          background: #16a34a;;
+          background: #16a34a;
           color: #ffffff;
           font-size: 0.95rem;
           font-weight: 650;

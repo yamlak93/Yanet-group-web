@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import SeeMoreButton from "../../Components/SeeMoreButton";
-import DisplayCard from "../../Components/DisplayCard";
 
-// Import partner logos – replace with your real files
 import BGI from "../../assets/partners/BGI.png";
 import Dashn from "../../assets/partners/DASHN.jpg";
 import Habesha from "../../assets/partners/HABESHA.webp";
@@ -25,211 +24,312 @@ const partners = [
   { image: Kurita, name: "Kurita" },
 ];
 
-const PER_PAGE = 6;
-
 const GlobalPartnersOverview = () => {
-  const [page, setPage] = useState(0);
   const [visible, setVisible] = useState(false);
-  const [fading, setFading] = useState(false);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(true);
   const sectionRef = useRef(null);
+  const trackRef = useRef(null);
 
-  const totalPages = Math.ceil(partners.length / PER_PAGE);
-
-  // Auto slideshow
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setPage((prev) => (prev + 1) % totalPages);
-        setFading(false);
-      }, 400);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [totalPages]);
-
-  // Scroll in/out
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  const goToPage = (index) => {
-    if (index === page) return;
-    setFading(true);
-    setTimeout(() => {
-      setPage(index);
-      setFading(false);
-    }, 400);
+  const updateArrows = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const { scrollLeft, scrollWidth, clientWidth } = track;
+    setCanLeft(scrollLeft > 8);
+    setCanRight(scrollLeft < scrollWidth - clientWidth - 8);
   };
 
-  const currentPartners = partners.slice(
-    page * PER_PAGE,
-    page * PER_PAGE + PER_PAGE,
-  );
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    updateArrows();
+    track.addEventListener("scroll", updateArrows, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    return () => {
+      track.removeEventListener("scroll", updateArrows);
+      window.removeEventListener("resize", updateArrows);
+    };
+  }, []);
+
+  const scrollBy = (dir) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: dir * 260, behavior: "smooth" });
+  };
 
   return (
-    <section className="global-partners" ref={sectionRef}>
-      <div className="gp-container">
-        <h2 className={`gp-title ${visible ? "show" : ""}`}>Our Partners</h2>
-
-        <div className={`gp-shell ${visible ? "show" : ""}`}>
-          <div className={`gp-grid ${fading ? "fade" : ""}`}>
-            {currentPartners.map((partner, i) => (
-              <div
-                key={`${page}-${partner.name}-${i}`}
-                style={{
-                  transitionDelay: fading ? "0s" : `${i * 0.06}s`,
-                }}
-              >
-                <DisplayCard
-                  image={partner.image}
-                  alt={partner.name}
-                  title={partner.name}
-                  // no description → only image + name
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="gp-dots">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                className={`gp-dot ${i === page ? "active" : ""}`}
-                onClick={() => goToPage(i)}
-                aria-label={`Partners page ${i + 1}`}
-              />
-            ))}
-          </div>
+    <section className="gpo-section" ref={sectionRef}>
+      <div className="gpo-container">
+        <div className={`gpo-header ${visible ? "show" : ""}`}>
+          <span className="gpo-badge">OUR NETWORK</span>
+          <h2 className="gpo-title">Trusted Partners</h2>
+          <p className="gpo-lead">
+            We collaborate with leading local and international organizations
+            across beverage, chemical, and industrial sectors.
+          </p>
         </div>
 
-        <div className={`gp-cta ${visible ? "show" : ""}`}>
-          <SeeMoreButton to="/global-network/partners" label="See All" />
+        <div className={`gpo-carousel ${visible ? "show" : ""}`}>
+          <button
+            type="button"
+            className="gpo-nav gpo-prev"
+            onClick={() => scrollBy(-1)}
+            disabled={!canLeft}
+            aria-label="Previous partners"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <div className="gpo-track" ref={trackRef}>
+            {partners.map((partner, i) => (
+              <article
+                key={partner.name}
+                className="gpo-card"
+                style={{
+                  transitionDelay: visible ? `${0.06 + i * 0.04}s` : "0s",
+                }}
+              >
+                <div className="gpo-logo">
+                  <img src={partner.image} alt={partner.name} loading="lazy" />
+                </div>
+                <h3>{partner.name}</h3>
+              </article>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            className="gpo-nav gpo-next"
+            onClick={() => scrollBy(1)}
+            disabled={!canRight}
+            aria-label="Next partners"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
+        <div className={`gpo-cta ${visible ? "show" : ""}`}>
+          <SeeMoreButton
+            to="/global-network/partners"
+            label="See All Partners"
+          />
         </div>
       </div>
 
       <style>{`
-        .global-partners {
-          padding: 5rem 1.5rem 6rem;
+        .gpo-section {
+          padding: 4.75rem 1.5rem 5.25rem;
           background: #ffffff;
         }
 
-        .gp-container {
-          max-width: 1000px;
+        .gpo-container {
+          max-width: 1120px;
           margin: 0 auto;
         }
 
-        .gp-title {
+        .gpo-header {
           text-align: center;
-          font-size: clamp(1.9rem, 3.5vw, 2.4rem);
-          font-weight: 800;
-          color: #0f172a;
-          margin: 0 0 2.2rem;
-          letter-spacing: -0.4px;
+          margin-bottom: 2.25rem;
           opacity: 0;
-          transform: translateY(24px);
+          transform: translateY(18px);
           transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .gp-title.show {
+        .gpo-header.show {
           opacity: 1;
           transform: translateY(0);
         }
 
-        .gp-shell {
-          background: #f8faf8;
-          border: 1px solid #e8f0e9;
-          border-radius: 24px;
-          padding: 1.6rem 1.5rem 1.5rem;
-          box-shadow:
-            0 4px 6px rgba(0, 0, 0, 0.02),
-            0 18px 44px rgba(46, 125, 50, 0.08);
+        .gpo-badge {
+          display: inline-block;
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #16a34a;
+          margin-bottom: 0.6rem;
+        }
+
+        .gpo-title {
+          margin: 0 0 0.65rem;
+          font-size: clamp(1.7rem, 3vw, 2.2rem);
+          font-weight: 800;
+          color: #0f172a;
+          letter-spacing: -0.35px;
+        }
+
+        .gpo-lead {
+          margin: 0 auto;
+          max-width: 520px;
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: #64748b;
+        }
+
+        .gpo-carousel {
+          position: relative;
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(20px);
           transition: all 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
         }
 
-        .gp-shell.show {
+        .gpo-carousel.show {
           opacity: 1;
           transform: translateY(0);
         }
 
-        .gp-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
-          transition: opacity 0.4s ease;
-        }
-
-        .gp-grid.fade {
-          opacity: 0;
-        }
-
-        .gp-dots {
+        .gpo-track {
           display: flex;
-          justify-content: center;
-          gap: 0.4rem;
-          margin-top: 1.4rem;
+          gap: 1.1rem;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          scroll-snap-type: x mandatory;
+          padding: 0.5rem 2.75rem 1rem;
+          scrollbar-width: none;
         }
 
-        .gp-dot {
-          width: 8px;
-          height: 8px;
+        .gpo-track::-webkit-scrollbar {
+          display: none;
+        }
+
+        .gpo-card {
+          flex: 0 0 180px;
+          scroll-snap-align: start;
+          background: #ffffff;
+          border: 1px solid #e8f0e9;
+          border-radius: 16px;
+          padding: 1.35rem 1rem 1.15rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.85rem;
+          box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+          transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            opacity 0.6s ease;
+          opacity: 0;
+          transform: translateY(12px);
+        }
+
+        .gpo-carousel.show .gpo-card {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .gpo-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 14px 32px rgba(22, 163, 74, 0.12);
+          border-color: rgba(22, 163, 74, 0.25);
+        }
+
+        .gpo-logo {
+          width: 100%;
+          height: 72px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #f8faf9;
+          border-radius: 12px;
+          padding: 0.65rem;
+        }
+
+        .gpo-logo img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          display: block;
+        }
+
+        .gpo-card h3 {
+          margin: 0;
+          font-size: 0.88rem;
+          font-weight: 700;
+          color: #0f172a;
+          text-align: center;
+          line-height: 1.35;
+        }
+
+        .gpo-nav {
+          position: absolute;
+          top: 42%;
+          transform: translateY(-50%);
+          z-index: 3;
+          width: 42px;
+          height: 42px;
           border-radius: 50%;
-          border: none;
-          background: rgba(46, 125, 50, 0.25);
+          border: 1px solid #e8f0e9;
+          background: #ffffff;
+          color: #16a34a;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           cursor: pointer;
-          padding: 0;
-          transition: all 0.3s ease;
+          box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+          transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
         }
 
-        .gp-dot.active {
+        .gpo-nav:hover:not(:disabled) {
           background: #16a34a;
-          width: 22px;
-          border-radius: 8px;
+          color: #ffffff;
+          border-color: #16a34a;
         }
 
-        .gp-cta {
+        .gpo-nav:disabled {
+          opacity: 0.3;
+          cursor: default;
+        }
+
+        .gpo-prev {
+          left: 0;
+        }
+
+        .gpo-next {
+          right: 0;
+        }
+
+        .gpo-cta {
           display: flex;
           justify-content: center;
-          margin-top: 1.6rem;
+          margin-top: 1.75rem;
           opacity: 0;
-          transform: translateY(18px);
-          transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+          transform: translateY(14px);
+          transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
         }
 
-        .gp-cta.show {
+        .gpo-cta.show {
           opacity: 1;
           transform: translateY(0);
         }
 
-        @media (max-width: 700px) {
-          .gp-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.85rem;
-          }
-        }
-
-        @media (max-width: 420px) {
-          .global-partners {
-            padding: 3.5rem 1.2rem 4.5rem;
+        @media (max-width: 640px) {
+          .gpo-section {
+            padding: 3.5rem 1.15rem 4rem;
           }
 
-          .gp-shell {
-            padding: 1.2rem 0.9rem 1.15rem;
-            border-radius: 20px;
+          .gpo-card {
+            flex: 0 0 150px;
           }
 
-          .gp-grid {
-            grid-template-columns: 1fr;
+          .gpo-track {
+            padding-left: 2.4rem;
+            padding-right: 2.4rem;
+          }
+
+          .gpo-nav {
+            width: 36px;
+            height: 36px;
           }
         }
       `}</style>

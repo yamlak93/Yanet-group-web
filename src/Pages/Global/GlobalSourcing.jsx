@@ -11,7 +11,6 @@ const GlobalSourcing = () => {
       <GlobalSourcingHero />
       <GlobalSourcingApproach />
       <GlobalSourcingEthiopia />
-      <GlobalSouringChemical />
       <GlobalSourcingChemicalRegions />
     </>
   );
